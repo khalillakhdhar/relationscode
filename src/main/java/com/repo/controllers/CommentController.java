@@ -81,6 +81,7 @@ public class CommentController {
   
   @DeleteMapping("/tutorials/{tutorialId}/comments")
   public ResponseEntity<List<Comment>> deleteAllCommentsOfTutorial(@PathVariable(value = "tutorialId") Long tutorialId) {
+	  // ?tutorialId=
     if (!tutorialRepository.existsById(tutorialId)) {
       throw new ResourceNotFoundException("Not found Tutorial with id = " + tutorialId);
     }
